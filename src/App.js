@@ -26,6 +26,7 @@ function App() {
 
     const newDiaryList = data.filter((it) => it.id !== targetId);
     console.log(newDiaryList);
+    setData(newDiaryList);
   };
 
   return (
