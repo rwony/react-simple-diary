@@ -3,8 +3,6 @@ import DiaryEditor from "./DiaryEditor";
 import DiaryList from "./DiaryList";
 import "./App.css";
 
-// https://jsonplaceholder.typicode.com/comments
-
 function App() {
   const [data, setData] = useState([]);
   const dataId = useRef(0);
