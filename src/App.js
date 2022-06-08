@@ -30,8 +30,8 @@ function App() {
     getData();
   }, []);
 
+  // 일기 데이터를 추가할 수 있는 함수
   const onCreate = (author, content, emotion) => {
-    // 일기 데이터를 추가할 수 있는 함수
     const created_date = new Date().getTime();
     const newItem = {
       author,
