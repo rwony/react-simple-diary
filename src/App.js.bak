@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useRef,
-  useEffect,
-  useMemo,
-  useCallback,
-} from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import DiaryEditor from "./DiaryEditor";
 import DiaryList from "./DiaryList";
 import "./App.css";
@@ -36,8 +30,8 @@ function App() {
     getData();
   }, []);
 
-  // 일기 데이터를 추가할 수 있는 함수
-  const onCreate = useCallback((author, content, emotion) => {
+	// 일기 데이터를 추가할 수 있는 함수
+  const onCreate = (author, content, emotion) => {
     const created_date = new Date().getTime();
     const newItem = {
       author,
@@ -47,8 +41,8 @@ function App() {
       id: dataId.current,
     };
     dataId.current += 1;
-    setData((data) => [newItem, ...data]);
-  }, []);
+    setData([newItem, ...data]);
+  };
 
   const onRemove = (targetId) => {
     const newDiaryList = data.filter((it) => it.id !== targetId);
