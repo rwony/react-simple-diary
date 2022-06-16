@@ -50,18 +50,17 @@ function App() {
     setData((data) => [newItem, ...data]);
   }, []);
 
-  const onRemove = (targetId) => {
-    const newDiaryList = data.filter((it) => it.id !== targetId);
-    setData(newDiaryList);
-  };
+  const onRemove = useCallback((targetId) => {
+    setData((data) => data.filter((it) => it.id !== targetId));
+  }, []);
 
-  const onEdit = (targetId, newContent) => {
-    setData(
+  const onEdit = useCallback((targetId, newContent) => {
+    setData((data) =>
       data.map((it) =>
         it.id === targetId ? { ...it, content: newContent } : it
       )
     );
-  };
+  }, []);
 
   // 이렇게 함수를 최적화 하면 더 이상 함수가 아님. 값을 반환하기 때문
   // useMemo라는 기능은 어떤 함수를 전달 받아 콜백함수가 리턴하는 값을 리턴하기 때문
