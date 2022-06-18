@@ -9,6 +9,7 @@ const DiaryItem = ({
   emotion,
   id,
 }) => {
+
   const [isEdit, setIsEdit] = useState(false);
   const toggleIsEdit = () => setIsEdit(!isEdit);
 
