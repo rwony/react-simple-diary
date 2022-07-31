@@ -1,2 +1,2 @@
-# REACT
+REACT
 # react-simple-diary
